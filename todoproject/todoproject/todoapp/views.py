@@ -24,13 +24,14 @@ class Taskupdateview(UpdateView):
     fields = ('name','priority','date')
 
     def get_success_url(self):
-        return reverse_lazy('cbvdetail',kwargs={'pk':self.object.id})
+        #return reverse_lazy('cbvdetail',kwargs={'pk':self.object.id})
+        return reverse_lazy('cbvhome')
 
 class Taskdeleteview(DeleteView):
     model = Task
     template_name = 'delete.html'
     # context_object_name = 'task'
-    success_url = reverse_lazy('cbvhome')
+    success_url = reverse_lazy('add')
 
 
 # Create your views here.
